@@ -1,0 +1,24 @@
+# Wpisz tutaj ID swojego serwera, znajdziesz je w linku do profilu Twojego serwera, np.
+# Dla serwera https://blocklist.pl/servers/dobraklepa ID będzie dobraklepa,
+# Dla serwera https://blocklist.pl/servers/rgmc ID będzie rgmc,
+# Dla serwera https://blocklist.pl/servers/minecraftersi ID będzie minecraftersi, itd.
+server-id: "rgmc-pl"
+
+# Alternatywne nazwy polecenia pod którymi dostępne jest głosowanie
+command-aliases:
+  - "vote"
+  - "glosowanie"
+  - "blocklist"
+  - "glosuj"
+  - "zaglosuj"
+  - "oddajglos"
+  - "glosoddaj"
+  - "listamc"
+  - "listaserwerow"
+
+# Podane komendy są wykonywane w momencie oddania przez gracza głosu na serwer
+# Dostępna zmienna: %player-name% - nazwa gracza
+# Komendy NIE muszą zaczynać się znakiem /
+reward-commands:
+  - "give %player-name% DIAMOND 64"
+  - "say %player-name% pomyslnie zaglosowal na serwer"

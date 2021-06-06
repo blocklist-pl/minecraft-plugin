@@ -1,0 +1,8 @@
+name: BlocklistPlugin
+main: pl.blocklist.BlocklistPlugin
+author: 0VERR
+version: 1.0-SNAPSHOT
+api-version: 1.16
+commands:
+  blvote:
+    description: "Main vote command"
