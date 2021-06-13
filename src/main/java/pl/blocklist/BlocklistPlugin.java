@@ -21,11 +21,11 @@ import java.util.concurrent.CompletableFuture;
 
 import static org.asynchttpclient.Dsl.asyncHttpClient;
 
-public class BlocklistPlugin extends JavaPlugin implements CommandExecutor, Listener {
+public class BlocklistPlugin extends JavaPlugin implements Listener {
 
-    private final static String GENERATE_VOTE_ENDPOINT = "https://api.blocklist.pl/api/external-votes/";
+    private static final String GENERATE_VOTE_ENDPOINT = "https://api.blocklist.pl/api/external-votes/";
 
-    private final static String VALIDATE_VOTE_ENDPOINT = "https://api.blocklist.pl/api/external-votes?code=";
+    private static final String VALIDATE_VOTE_ENDPOINT = "https://api.blocklist.pl/api/external-votes?code=";
 
     private AsyncHttpClient httpClient;
 
@@ -37,7 +37,7 @@ public class BlocklistPlugin extends JavaPlugin implements CommandExecutor, List
 
     private List<String> commandAliases;
 
-    private final static String MAIN_VOTE_COMMAND = "blvote";
+    private static final String MAIN_VOTE_COMMAND = "blvote";
 
     @Override
     public void onEnable() {
@@ -144,6 +144,7 @@ public class BlocklistPlugin extends JavaPlugin implements CommandExecutor, List
             if (exception != null) {
                 exception.printStackTrace();
                 executor.sendMessage(ChatColor.RED + "Wystąpił błąd. Skontaktuj się z administratorem serwera.");
+                return;
             }
 
             int statusCode = validateVoteResponse.getStatusCode();
